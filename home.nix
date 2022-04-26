@@ -42,6 +42,29 @@
               sha256 = "00xqlyl3lffc5l0viin1nyp819wf81fncqyz87jx8ljjdhilmgbs";
            };
         }];
+        
+        # Shell Aliases
+        shellAliases = {
+           # Prompt confirmation
+           rm = "rm -i";
+           cp = "cp -i";
+           mv = "mv -i";
+           # Enable nested directoriesn
+           mkdir = "mkdir -p";
+        };
+        
+        # Custom Functions
+        functions = {
+           fish_greeting = {
+              description = "Starting Greeting";
+              body = ""; # Emtpy
+           };
+
+           mkdcd = {
+              description = "Make a directory and enter it";
+              body = "mkdir -p $argv[1]; and cd $argv[1]"; 
+           };
+        };
      };
      
      # Git
@@ -49,6 +72,10 @@
         enable = true;
         userName = "Athansya";
         userEmail = "atoriz98@outlook.com";
+        # Aliases
+        aliases = {
+           st = "status"; 
+        };
      };
   };
 

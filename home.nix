@@ -11,19 +11,19 @@
   };
 
   # Packages to install
-  home.packages = [
+  home.packages = with pkgs; [
      # pkgs is the set of all packages in the default home.nix implementation
 
      # Terminal
-     pkgs.tmux # Terminal multiplexer
+     tmux # Terminal multiplexer
 
      # Editors
-     pkgs.vim
+     vim  # Soon to me moved to programs custom configuration
 
      # Tools
-     pkgs.bat # Pretty cat replacement
-     pkgs.exa # Better ls written in Rust
-     pkgs.tldr # Simpler manpage with examples
+     bat # Pretty cat replacement
+     exa # Better ls written in Rust
+     tldr # Simpler manpage with examples
   ];
 
   # Programs to install and configure in a custom way

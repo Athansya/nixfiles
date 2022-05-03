@@ -17,9 +17,6 @@
      # Terminal
      tmux # Terminal multiplexer
 
-     # Editors
-     vim  # Soon to me moved to programs custom configuration
-
      # Tools
      bat # Pretty cat replacement
      exa # Better ls written in Rust
@@ -67,6 +64,39 @@
         };
      };
      
+     # VIM
+     vim = {
+        enable = true;
+        # Plugins
+        plugins = with pkgs.vimPlugins; [
+	   # Status line
+	   lightline-vim
+
+	   # Theme
+	   dracula-vim
+
+	   # Syntax
+	   syntastic
+	   YouCompleteMe
+
+           # FileManager
+           nerdtree
+
+           # Git Integration
+           vim-gitgutter
+           nerdtree-git-plugin
+	]; 
+        # Additional configuration
+        settings = {
+          ignorecase = true;
+          relativenumber = true;
+          tabstop = 2;
+        };
+        extraConfig = ''
+           colorscheme dracula
+        '';
+     };
+     
      # Git
      git = {
         enable = true;
@@ -81,8 +111,6 @@
 
 
   # TODO
-  # Configure VIM
-  # 
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

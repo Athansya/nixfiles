@@ -23,3 +23,9 @@ Configuration with some plugins enable:
 
 #### GIT
 Credentials and aliases.
+
+
+## References & Resources
+[Chris Bailey's Blog](https://cbailey.co.uk/posts/a_minimal_nix_development_environment_on_wsl)
+[Mattia Gueda's Blog](https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix)
+[Home Manager Manual](https://nix-community.github.io/home-manager/)

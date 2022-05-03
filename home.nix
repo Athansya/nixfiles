@@ -69,23 +69,23 @@
         enable = true;
         # Plugins
         plugins = with pkgs.vimPlugins; [
-	   # Status line
-	   lightline-vim
+	        # Status line
+	        lightline-vim
 
-	   # Theme
-	   dracula-vim
+	        # Theme
+	        dracula-vim
 
-	   # Syntax
-	   syntastic
-	   YouCompleteMe
+	        # Syntax
+	        syntastic
+	        YouCompleteMe
 
-           # FileManager
-           nerdtree
+          # FileManager
+          nerdtree
 
-           # Git Integration
-           vim-gitgutter
-           nerdtree-git-plugin
-	]; 
+          # Git Integration
+          vim-gitgutter
+          nerdtree-git-plugin
+	      ]; 
         # Additional configuration
         settings = {
           ignorecase = true;

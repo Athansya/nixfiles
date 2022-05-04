@@ -65,7 +65,8 @@
             body = ''
               set -l nix_shell_info (
                 if test -n "$IN_NIX_SHELL"
-                  echo -n "<nix-shell>"
+                  set_color $fish_color_cwd
+                  printf '<nix-shell> '
                 else
                   set_color $fish_color_cwd
                   printf '%s' $USER
@@ -122,8 +123,11 @@
 
         # vimrc extra configuration
         extraConfig = ''
-           set shell=/home/atoriz98/.nix-profile/bin/fish
-           colorscheme dracula 
+          set wrap
+          set breakindent
+          set lineabreak
+          set shell=/home/atoriz98/.nix-profile/bin/fish
+          colorscheme dracula 
         '';
       };
 

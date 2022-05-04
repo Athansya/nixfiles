@@ -49,7 +49,7 @@
            # Enable nested directoriesn
            mkdir = "mkdir -p";
            # Enable nix-shell on fish
-           nix-shell = "nix-shell --run fish";
+           #nix-shell = "nix-shell --run fish";
          };
 
         # Custom Functions
@@ -57,6 +57,30 @@
           fish_greeting = {
             description = "Starting Greeting";
             body = ""; # Emtpy
+          };
+
+          fish_prompt = {
+            description = "Fish prompt";
+            body = ''
+              set -l nix_shell_info (
+                if test -n "$IN_NIX_SHELL"
+                  echo -n "<nix-shell>"
+                else
+                  set_color $fish_color_cwd
+                  printf '%s' $USER
+
+                  set_color normal
+                  printf '@%s' $hostname
+
+                  set_color $fish_color_cwd
+                  printf '%s' (prompt_pwd)
+
+                  set_color normal
+                  printf '%s λ ' (fish_git_prompt)
+                end
+              )
+              echo -n -s "$nix_shell_info"
+            '';
           };
 
           mkdcd = {

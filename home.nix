@@ -48,8 +48,6 @@
            mv = "mv -i";
            # Enable nested directoriesn
            mkdir = "mkdir -p";
-           # Enable nix-shell on fish
-           #nix-shell = "nix-shell --run fish";
          };
 
         # Custom Functions
@@ -59,6 +57,7 @@
             body = ""; # Emtpy
           };
 
+          # Fish prompt changes depending on being in nix shell or not
           fish_prompt = {
             description = "Fish prompt";
             body = ''

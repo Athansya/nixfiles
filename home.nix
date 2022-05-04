@@ -48,6 +48,8 @@
            mv = "mv -i";
            # Enable nested directoriesn
            mkdir = "mkdir -p";
+           # Enable fish shell con nix-shell
+           nix-shell = "nix-shell --run fish";
          };
 
         # Custom Functions

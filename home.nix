@@ -125,7 +125,7 @@
         extraConfig = ''
           set wrap
           set breakindent
-          set lineabreak
+          set linebreak
           set shell=/home/atoriz98/.nix-profile/bin/fish
           colorscheme dracula 
         '';

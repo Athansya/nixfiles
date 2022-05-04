@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/atoriz98";
 
   home.sessionVariables = {
-     EDITOR = "vim";  # Predefined editor
+    EDITOR = "vim";  # Predefined editor
   };
 
   # Packages to install
@@ -21,25 +21,25 @@
      bat # Pretty cat replacement
      exa # Better ls written in Rust
      tldr # Simpler manpage with examples
-  ];
+   ];
 
   # Programs to install and configure in a custom way
   programs = {
      # Fish Shell
      fish = {
-        enable = true;
-     
+       enable = true;
+
         # Plugins // Look-up info. in NixOS.org + Github
         plugins = [{
-           name="foreign-env";
-           src = pkgs.fetchFromGitHub {
-              owner = "oh-my-fish";
-              repo = "plugin-foreign-env";
-              rev = "dddd9213272a0ab848d474d0cbde12ad034e65bc";
-              sha256 = "00xqlyl3lffc5l0viin1nyp819wf81fncqyz87jx8ljjdhilmgbs";
-           };
+          name="foreign-env";
+          src = pkgs.fetchFromGitHub {
+            owner = "oh-my-fish";
+            repo = "plugin-foreign-env";
+            rev = "dddd9213272a0ab848d474d0cbde12ad034e65bc";
+            sha256 = "00xqlyl3lffc5l0viin1nyp819wf81fncqyz87jx8ljjdhilmgbs";
+          };
         }];
-        
+
         # Shell Aliases
         shellAliases = {
            # Prompt confirmation
@@ -48,36 +48,38 @@
            mv = "mv -i";
            # Enable nested directoriesn
            mkdir = "mkdir -p";
-        };
-        
+           # Enable nix-shell on fish
+           nix-shell = "nix-shell --run fish";
+         };
+
         # Custom Functions
         functions = {
-           fish_greeting = {
-              description = "Starting Greeting";
-              body = ""; # Emtpy
-           };
+          fish_greeting = {
+            description = "Starting Greeting";
+            body = ""; # Emtpy
+          };
 
-           mkdcd = {
-              description = "Make a directory and enter it";
-              body = "mkdir -p $argv[1]; and cd $argv[1]"; 
-           };
+          mkdcd = {
+            description = "Make a directory and enter it";
+            body = "mkdir -p $argv[1]; and cd $argv[1]"; 
+          };
         };
-     };
-     
+      };
+
      # VIM
      vim = {
-        enable = true;
+       enable = true;
         # Plugins
         plugins = with pkgs.vimPlugins; [
-	        # Status line
-	        lightline-vim
+          # Status line
+          lightline-vim
 
-	        # Theme
-	        dracula-vim
+          # Theme
+          dracula-vim
 
-	        # Syntax
-	        syntastic
-	        YouCompleteMe
+          # Syntax
+          syntastic
+          YouCompleteMe
 
           # FileManager
           nerdtree
@@ -85,29 +87,32 @@
           # Git Integration
           vim-gitgutter
           nerdtree-git-plugin
-	      ]; 
+        ]; 
         # Additional configuration
         settings = {
           ignorecase = true;
           relativenumber = true;
           tabstop = 2;
         };
+
+        # vimrc extra configuration
         extraConfig = ''
-           colorscheme dracula
+           set shell=/home/atoriz98/.nix-profile/bin/fish
+           colorscheme dracula 
         '';
-     };
-     
+      };
+
      # Git
      git = {
-        enable = true;
-        userName = "Athansya";
-        userEmail = "atoriz98@outlook.com";
+       enable = true;
+       userName = "Athansya";
+       userEmail = "atoriz98@outlook.com";
         # Aliases
         aliases = {
-           st = "status"; 
+          st = "status"; 
         };
-     };
-  };
+      };
+    };
 
 
   # TODO

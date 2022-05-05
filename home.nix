@@ -113,6 +113,7 @@
           # Git Integration
           vim-gitgutter
           nerdtree-git-plugin
+          vim-fugitive
         ]; 
         # Additional configuration
         settings = {

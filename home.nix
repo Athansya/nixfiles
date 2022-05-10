@@ -21,6 +21,9 @@
      bat # Pretty cat replacement
      exa # Better ls written in Rust
      tldr # Simpler manpage with examples
+
+     # Syntax linters
+     rnix-lsp
    ];
 
   # Programs to install and configure in a custom way
@@ -104,7 +107,8 @@
           dracula-vim
 
           # Syntax
-          syntastic
+          #syntastic
+          ale
           YouCompleteMe
 
           # FileManager

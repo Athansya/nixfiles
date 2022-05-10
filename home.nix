@@ -53,6 +53,9 @@
            mkdir = "mkdir -p";
            # Enable fish shell con nix-shell
            nix-shell = "nix-shell --run fish";
+           develop = "nix develop -c fish";
+           # Better ls
+           ls = "exa -l";
          };
 
         # Custom Functions
@@ -107,7 +110,6 @@
           dracula-vim
 
           # Syntax
-          #syntastic
           ale
           YouCompleteMe
 

@@ -125,11 +125,14 @@
         settings = {
           ignorecase = true;
           relativenumber = true;
-          tabstop = 2;
         };
 
         # vimrc extra configuration
         extraConfig = ''
+          set tabstop=2
+          set softtabstop=2
+          set shiftwidth=2
+          set expandtab
           set wrap
           set breakindent
           set linebreak
